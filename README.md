@@ -1,4 +1,4 @@
-# WeatherDashboard
+# WeatherDjango
 
 Simple Django project that displays weather information from an input city, collected through OpenWeather API : https://openweathermap.org
 
