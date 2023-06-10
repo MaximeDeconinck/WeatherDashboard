@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(to top right, #5e72e4, #32b0d3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.city-input {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #e1e1e1;
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #17184d;
+    font-size: 26px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0px;
+}
+
+input[type="text"] {
+    background-color: #e1e1e1;
+    border: 2px solid #17184d;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 15px 20px;
+    margin-top: 20px;
+    width: 100%;
+}

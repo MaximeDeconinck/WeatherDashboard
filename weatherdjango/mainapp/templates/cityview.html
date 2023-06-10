@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'cityview.css' %}" rel="stylesheet">
+    <title>{{ data.name }} weather</title>
+</head>
+<body>
+    <div class="content">
+        <div class="weather-info">
+            <h2>{{ data.name }}</h2>
+            <ul>
+                <li>
+                    <div class="temp_min">{{ data.main.temp_min_parts.integer_part }}°C</div>
+                    <div class="temperature">{{ data.main.temp_parts.integer_part }}°C</div>
+                    <div class="temp_max">{{ data.main.temp_max_parts.integer_part }}°C</div>
+                </li>
+                <li class="feels">feels like {{ data.main.feels_like_parts.integer_part }}°C</li>
+                <li>
+                    <div class="weather_data">
+                        <div class="left">&#128166; {{ data.main.humidity }}%</div>
+                        <div class="right">{{ data.weather.0.main }} &#127782;&#65039; </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="weather_data">
+                        <div class="left">&#128168; {{ data.wind.speed }}km/h</div>
+                        <div class="right">{{ data.clouds.all }}% &#9729;&#65039;</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="city-input">
+            <h1>Wanna check somewhere else ?</h1>
+            <form method="POST" action="{% url 'cityview' %}">
+                {% csrf_token %}
+                <input type="text" name="city" placeholder="Roma, Madrid or even Sydney ?"></input>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
